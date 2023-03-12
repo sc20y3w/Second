@@ -1,0 +1,268 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+
+a:hover{
+  opacity: 0.7;
+  background-color: chocolate;
+  border-radius: 40px;
+  padding: 15px 50px;
+  transition: 0.5s;
+  color: honeydew;
+  opacity: 1;
+}
+
+a:hover::before{
+  top: -10%;
+  left: -10%;
+}
+
+a:hover{
+  color: blanchedalmond;
+  transform: scale(1);
+}
+*/
+
+.nav-list a{
+  /* 相对定位 */
+  position: relative;
+  /* 将a标签转为块级元素,不然无法设置宽高 */
+  display: block;
+  width: 140px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  margin: 40px;
+  color: chocolate;
+  text-decoration: none;
+  font-size: 20px;
+  /* 动画过渡，延迟时间 */
+  transition: all 0.09s ease-in-out 0.09s;
+  /* 我们是如果改变a标签的颜色 */
+  /* hue-rotate是颜色滤镜.可以加不同的度数来改变颜色.这里我们用的是calc自动计算函数 */
+  /* 以及var函数来调用我们给每一个a元素设置的不同的自定义属性1~5，然后分别乘以60度，就能够分别得到不同的颜色 */
+  filter: hue-rotate(calc(var(--i)*60deg));
+
+}
+
+
+/* 这里将两个伪元素的相同样式写在一起 */
+.nav-list a::before,
+.nav-list a::after{
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px chocolate;
+  /* 这里加一个动画过渡
+  最后的0.2秒时延迟时间 */
+  transition: all 0.2s ease-in-out 0.2s;
+  opacity: 1;
+}
+
+.nav-list a::before{
+  top: 0;
+  left: 0;
+  /* 删除左边元素的右边框和下边框 */
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.nav-list a::after{
+  right: 0;
+  bottom: 0;
+  /* 删除右边元素的左边框和上边框 */
+  border-left: 0;
+  border-top: 0;
+}
+
+.nav-list a:hover{
+  background-color: chocolate;
+  color: blanchedalmond;
+  box-shadow: 0 0 50px chocolate;
+  /*-webkit-box-reflect: below 1px linear-gradient(transparent,rgba(0,0,0,0.3));*/
+  transition-delay: 0.02s;
+}
+
+.nav-list a:hover::before,
+.nav-list a:hover::after{
+  width: 138px;
+  height: 58px;
+  transition-delay: 0s;
+}
+
+.logo{
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: blanchedalmond;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "system-ui",-apple-system, 'Helvetica',Arial, sans-serif;
+  background: #23232e;
+  height: 8vh;
+}
+
+.nav-list{
+  /* 使黑点消除 */
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li{
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+.mobile-menu{
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div{
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+/* 开始响应式设计 */
+@media(max-width:999px){
+  body{
+    overflow-x: hidden;
+  }
+  .nav-list{
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 30vw;
+    height:92vh;
+    background: #23232e;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+
+  .nav-list li{
+    margin-left: 0;
+    opacity: 0;
+  }
+
+  .mobile-menu{
+    display: block;
+  }
+
+  .nav-list.active{
+    transform: translateX(0);
+  }
+
+  @keyframes navLinkFade {
+    from{
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+
+.mobile-menu.active .line1{
+  transform:  rotate(-45deg) translate(-9px ,8px);
+}
+.mobile-menu.active .line2{
+  opacity: 0;
+}
+.mobile-menu.active .line3{
+  transform:  rotate(45deg) translate(-5px ,-6px);
+}
+.content {
+margin-top:3%;
+}
+table {
+  border-collapse: collapse;
+  width: 70%;
+  text-align:center;
+ background-color:white;
+ margin-top:20px;
+
+}
+
+th, td {
+  padding: 8px;
+
+}
+tr:nth-child(even){background-color: #f2f2f2;
+}
+th {
+  background-color:#7FFFD4;
+  color: black;
+}
+h4{
+font-size:30px;
+color:white;
+}
+.btn{
+    width: 80px;
+    height: 35px;
+    background:linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+}
+
+form{
+    margin: 10px;
+    text-align: center;
+    color:white;
+    line-height: 65px;
+    width: 520px;
+    height: 400px;
+    border-radius: 10px;
+    border: 2px solid rgb(190, 190, 214);
+}
+.form-group{
+background:transparent;
+    border:1px solid #b7bbf5;
+   height:80px;
+   font-size:23px;
+   font-weight:500;
+}
+.form-control{
+height:30px;
+border-radius: 10px;
+    border: 2px solid rgb(190, 190, 214);
+}
+.btn1{
+margin-top:5%;
+width: 278px;
+    height: 35px;
+    background:linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+
+}

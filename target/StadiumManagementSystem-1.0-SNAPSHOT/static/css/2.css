@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+height:5%;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+background-color:#7FFFD4;
+font-size:20px;
+}
+/* Style the side navigation */
+
+.sidenav {
+  height:100%;
+  width: 200px;
+position:fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+
+  color: #7FFFD4;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+margin-left:12%;
+
+}
+table {
+  border-collapse: collapse;
+  width: 70%;
+  text-align:center;
+ background-color:white;
+}
+
+th, td {
+  padding: 8px;
+
+}
+tr:nth-child(even){background-color: #f2f2f2}
+th {
+  background-color:#7FFFD4;
+  color: black;
+}
+h4{
+font-size:20px;
+
+}

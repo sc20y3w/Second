@@ -1,0 +1,102 @@
+.header{
+    width: 100%;
+    height: 600px;
+    position: relative;
+text-align:center;
+}
+
+.topic{
+    color: #ffffff;
+    margin-top:8px;
+    margin-left: 70px;
+    font-family: "Times New Roman", Times, serif;
+
+}
+strong{
+    word-spacing: 5px;
+    font-size: 30px;
+}
+
+.box{
+    margin-left:650px;
+    margin-top:100px;
+    width: 480px;
+    height: 310px;
+    border-radius: 10px;
+    border: 2px solid rgb(190, 190, 214);
+}
+.tile{
+    color: white;
+    opacity: 0.8;
+      text-align:center;
+}
+
+.LOGIN{
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    font-style:italic
+}
+form{
+    margin: 10px;
+    text-align: center;
+    color:white ;
+    line-height: 33px;
+
+}
+
+.btn{
+    width: 100px;
+    height: 47px;
+    background:linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+    position: relative;
+    z-index: 0;
+}
+.btn::before{
+    position:absolute;
+    content: '';
+    left: 0;
+    bottom:0;
+    width: 100%;
+    height: 0;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    background: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+    z-index: -1;
+}
+.btn:hover::before{
+    top: 0;
+    height: 100%;
+}
+.btn:active{
+    top: 2px;
+}
+
+.text01{
+    background:transparent;
+    border:1px solid #b7bbf5
+}
+.Dan{
+    padding: 5px;
+}
+
+.Bqsy{
+    position: absolute;
+    top: 480px;
+    left: 500px;
+    font-size: 10px;
+    color: #11449E;
+}
+a{
+color:#fff;}
